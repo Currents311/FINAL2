@@ -1,0 +1,10 @@
+package com.menu;
+
+import com.menu.*;
+
+public interface MenuEvent {
+
+    public void menuSelected(int index, int subIndex, MenuAction menuAction);
+
+    
+}
