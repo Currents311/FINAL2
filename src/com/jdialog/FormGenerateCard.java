@@ -271,7 +271,7 @@ public class FormGenerateCard extends javax.swing.JDialog {
         BufferedImage barcodeImage = null;
 
         try {
-            Barcode barcode = BarcodeFactory.createCode128(String.valueOf(pelanggan.getIdPelanggan()));
+            Barcode barcode = BarcodeFactory.createCode128(String.valueOf(pelanggan.getKodeRfid()));
             barcodeImage = BarcodeImageHandler.getImage(barcode);
         } catch (Exception e) {
             e.printStackTrace();

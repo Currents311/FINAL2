@@ -42,7 +42,7 @@ public class TableModelPelanggan extends AbstractTableModel{
         fireTableRowsDeleted(row, row);
         JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
     }
-    private final String[] columnNames = {"ID", "Nama pelanggan", "Telepon", "Alamat", "Level Member"};
+    private final String[] columnNames = {"ID", "Kode RFID", "Nama pelanggan", "Telepon", "Alamat", "Level Member"};
     
     
     @Override
@@ -62,12 +62,14 @@ public class TableModelPelanggan extends AbstractTableModel{
             case 0:
                 return pelanggan.getIdPelanggan();
             case 1:
-                return pelanggan.getNamaPelanggan();
+                return pelanggan.getKodeRfid();
             case 2:
-                return pelanggan.getTeleponPelanggan();
+                return pelanggan.getNamaPelanggan();
             case 3:
-                return pelanggan.getAlamatPelanggan();
+                return pelanggan.getTeleponPelanggan();
             case 4:
+                return pelanggan.getAlamatPelanggan();
+            case 5:
                 return pelanggan.getLevelMember();
             default:
                 return null;

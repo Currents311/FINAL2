@@ -76,15 +76,20 @@ public class FormLaporanPenjualan extends javax.swing.JPanel {
         kolom.getColumn(0).setMaxWidth(50);
         kolom.getColumn(0).setMinWidth(50);
         
+        TableColumnModel kolom4 = tblData.getColumnModel();
+        kolom4.getColumn(1).setPreferredWidth(130);
+        kolom4.getColumn(1).setMaxWidth(130);
+        kolom4.getColumn(1).setMinWidth(130);
+        
         TableColumnModel kolom1 = tblData.getColumnModel();
         kolom1.getColumn(2).setPreferredWidth(50);
         kolom1.getColumn(2).setMaxWidth(50);
         kolom1.getColumn(2).setMinWidth(50);
         
         TableColumnModel kolom2 = tblData.getColumnModel();
-        kolom2.getColumn(9).setPreferredWidth(50);
-        kolom2.getColumn(9).setMaxWidth(50);
-        kolom2.getColumn(9).setMinWidth(50);
+        kolom2.getColumn(10).setPreferredWidth(50);
+        kolom2.getColumn(10).setMaxWidth(50);
+        kolom2.getColumn(10).setMinWidth(50);
     }
     
     private void setLayoutForm(){

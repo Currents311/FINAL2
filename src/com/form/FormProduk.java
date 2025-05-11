@@ -65,9 +65,14 @@ public class FormProduk extends javax.swing.JPanel {
         kolom2.getColumn(3).setMinWidth(50);
     
         TableColumnModel kolom3 = tblData.getColumnModel();
-        kolom3.getColumn(7).setPreferredWidth(50);
-        kolom3.getColumn(7).setMaxWidth(50);
-        kolom3.getColumn(7).setMinWidth(50);
+        kolom3.getColumn(6).setPreferredWidth(80);
+        kolom3.getColumn(6).setMaxWidth(80);
+        kolom3.getColumn(6).setMinWidth(80);
+        
+        TableColumnModel kolom4 = tblData.getColumnModel();
+        kolom4.getColumn(7).setPreferredWidth(50);
+        kolom4.getColumn(7).setMaxWidth(50);
+        kolom4.getColumn(7).setMinWidth(50);
     }
     
     @SuppressWarnings("unchecked")

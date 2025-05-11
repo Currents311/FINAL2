@@ -395,7 +395,7 @@ WHERE pj.tanggal BETWEEN $P{startDate} AND $P{endDate} ORDER BY pj.tanggal]]>
 		</band>
 	</detail>
 	<summary>
-		<band height="50">
+		<band height="47">
 			<textField>
 				<reportElement x="0" y="0" width="469" height="20" uuid="810e7fcf-0936-4a0a-b442-f63ec0f34e94"/>
 				<box>

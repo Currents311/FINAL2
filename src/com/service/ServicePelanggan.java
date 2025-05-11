@@ -8,7 +8,7 @@ public interface ServicePelanggan {
     void perbaruiData (ModelPelanggan model);
     void hapusData (ModelPelanggan model);
     void updateLevelMember();
-    String getLevelMember(String idPelanggan);
+    String getLevelMember(String kodeRfid);
     
     List<ModelPelanggan> tampilData(int posisiAwal, int dataPerHalaman);
     List<ModelPelanggan> pencarianData(String id, int posisiAwal, int dataPerHalaman);

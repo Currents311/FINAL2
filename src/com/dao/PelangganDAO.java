@@ -92,6 +92,7 @@ public class PelangganDAO implements ServicePelanggan{
             while (rs.next()) {
                 ModelPelanggan pelanggan = new ModelPelanggan();
                 pelanggan.setIdPelanggan(rs.getInt("id_pelanggan"));
+                pelanggan.setKodeRfid(rs.getString("kode_rfid"));
                 pelanggan.setNamaPelanggan(rs.getString("nama_pelanggan"));
                 pelanggan.setTeleponPelanggan(rs.getString("telepon"));
                 pelanggan.setAlamatPelanggan(rs.getString("alamat"));
@@ -213,12 +214,12 @@ public class PelangganDAO implements ServicePelanggan{
     }
 
     @Override
-    public String getLevelMember(String idPelanggan) {
+    public String getLevelMember(String kodeRfid) {
         String level = null;
         try {
-            String sql = "SELECT level_member FROM pelanggan WHERE id_pelanggan = ?";
+            String sql = "SELECT level_member FROM pelanggan WHERE kode_rfid = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, idPelanggan);
+            ps.setString(1, kodeRfid);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 level = rs.getString("level_member");
@@ -229,5 +230,5 @@ public class PelangganDAO implements ServicePelanggan{
         }
     return level;
     }
-} 
+}
 

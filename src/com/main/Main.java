@@ -145,20 +145,20 @@ public class Main extends JLayeredPane {
                 FormMenuUtama.showForm(new FormSupplier());
             }else if(index == 4){
                 FormMenuUtama.showForm(new FormPelanggan());
-//            }else if(index == 5){
-//                FormMenuUtama.showForm(new FormPenjualan(modelKar, "admin"));            
-//            }else if(index == 6){
-//                FormMenuUtama.showForm(new FormPembelian(modelKar, "admin"));  
-//            }else if(index == 7){
-//                FormMenuUtama.showForm(new FormBarangRusak(modelKar, "admin"));  
+            }else if(index == 5){
+                FormMenuUtama.showForm(new FormPenjualan(modelKar, "admin"));            
+            }else if(index == 6){
+                FormMenuUtama.showForm(new FormPembelian(modelKar, "admin"));  
+            }else if(index == 7){
+                FormMenuUtama.showForm(new FormBarangRusak(modelKar, "admin"));  
             }else if(index == 8){
                 FormMenuUtama.showForm(new FormLaporanProduk());
-//            }else if(index == 9){
-//                FormMenuUtama.showForm(new FormLaporanPenjualan(modelKar, "admin"));
-//            }else if(index == 10){
-//                FormMenuUtama.showForm(new FormLaporanPembelian(modelKar, "admin"));
-//            }else if(index == 11){
-//                FormMenuUtama.showForm(new FormLaporanBarangRusak(modelKar, "admin"));
+            }else if(index == 9){
+                FormMenuUtama.showForm(new FormLaporanPenjualan(modelKar, "admin"));
+            }else if(index == 10){
+                FormMenuUtama.showForm(new FormLaporanPembelian(modelKar, "admin"));
+            }else if(index == 11){
+                FormMenuUtama.showForm(new FormLaporanBarangRusak(modelKar, "admin"));
             }else if (index == 12) {
                 int confirm = JOptionPane.showConfirmDialog(null, 
                     "Apakah Anda yakin ingin keluar?", "Konfirmasi Logout", 
@@ -176,12 +176,12 @@ public class Main extends JLayeredPane {
         menu.addMenuEvent((int index, int subIndex, MenuAction action) -> {
             if(index== 0){
                 FormMenuUtama.showForm(new FormDashboard(modelKar, "pegawai"));
-//            }else if(index == 1){
-//                FormMenuUtama.showForm(new FormPenjualan(modelKar, "pegawai"));
-//            }else if(index == 2){
-//                FormMenuUtama.showForm(new FormPembelian(modelKar, "pegawai"));
-//            }else if(index == 3){
-//                FormMenuUtama.showForm(new FormBarangRusak(modelKar, "pegawai"));
+            }else if(index == 1){
+                FormMenuUtama.showForm(new FormPenjualan(modelKar, "pegawai"));
+            }else if(index == 2){
+                FormMenuUtama.showForm(new FormPembelian(modelKar, "pegawai"));
+            }else if(index == 3){
+                FormMenuUtama.showForm(new FormBarangRusak(modelKar, "pegawai"));
             }else if (index == 4) {
                 int confirm = JOptionPane.showConfirmDialog(null, 
                     "Apakah Anda yakin ingin keluar?", "Konfirmasi Logout", 
