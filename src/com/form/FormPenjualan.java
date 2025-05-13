@@ -1654,7 +1654,7 @@ public class FormPenjualan extends javax.swing.JPanel {
         if(validasiSimpan()== true){
             String idPenjualan = txtTransaksi.getText();
             String tanggal = lbTanggal.getText();
-            double total = Double.parseDouble(txtSubtotal.getText().replace(",", ""));
+            double total = Double.parseDouble(txtTotalHarga.getText().replace(",", ""));
             double bayar = Double.parseDouble(txtBayar.getText().replace(",", ""));
             double diskon = Double.parseDouble(txtPotongan.getText().replace(",", ""));
             double kembalian = Double.parseDouble(txtKembalian.getText().replace(",", ""));

@@ -431,15 +431,15 @@ public class FormInputProduk extends javax.swing.JDialog {
                 String namaKategori = cbxKategori.getSelectedItem().toString();
                 if(!"Pilih Kategori".equals(namaKategori)){
                     idKategori = kategoriMap.get(namaKategori);
-                    String generatedBarcode = servis_ktg.generateBarcodeByKategori(idKategori);
-                    txtBarcode.setText(generatedBarcode);
-                } else {
+                    if (!btnSimpan.getText().equalsIgnoreCase("PERBARUI")) {
+                        String generatedBarcode = servis_ktg.generateBarcodeByKategori(idKategori);
+                        txtBarcode.setText(generatedBarcode);
+                    }
+                    } else {
                     txtBarcode.setText(""); 
                     idKategori = 0;
                 }             
-            });
-            
-            
+            });       
     }
 
     private void ambilSupplier(){
@@ -473,6 +473,8 @@ public class FormInputProduk extends javax.swing.JDialog {
 
     private boolean validasiInput(){
         boolean valid = false;
+        String barcode = txtBarcode.getText().trim();
+
         if (txtNama.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "Nama Produk tidak boleh kosong");
         }else if (cbxKategori.getSelectedItem().equals("Pilih Kategori")){
@@ -483,8 +485,10 @@ public class FormInputProduk extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Stok tidak boleh kosong");    
         }else if (cbxSupplier.getSelectedItem().equals("Pilih Supplier")){
             JOptionPane.showMessageDialog(null, "Harap pilih supplier");
-        }else if (txtBarcode.getText().trim().isEmpty()){
+        }else if (barcode.isEmpty()){
             JOptionPane.showMessageDialog(null, "Barcode tidak boleh kosong");
+        } else if (btnSimpan.getText().equalsIgnoreCase("SIMPAN") && barcodeExists(barcode)) {
+            JOptionPane.showMessageDialog(null, "Barcode sudah terdaftar, silakan gunakan barcode lain");
             } else {
                 valid = true;
             }
