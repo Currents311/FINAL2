@@ -127,9 +127,11 @@ public class PelangganDAO implements ServicePelanggan{
                 ModelPelanggan pelanggan = new ModelPelanggan();
                 
                 pelanggan.setIdPelanggan(rs.getInt("id_pelanggan"));
+                pelanggan.setKodeRfid(rs.getString("kode_rfid"));
                 pelanggan.setNamaPelanggan (rs.getString("nama_pelanggan"));
                 pelanggan.setTeleponPelanggan(rs.getString("telepon"));
                 pelanggan.setAlamatPelanggan(rs.getString("alamat"));
+                pelanggan.setLevelMember(rs.getString("level_member"));                
                 
                 list.add(pelanggan);
             }
@@ -191,6 +193,7 @@ public class PelangganDAO implements ServicePelanggan{
         String sql = 
             "UPDATE pelanggan SET level_member = " +
             "CASE " +
+            "    WHEN nama_pelanggan = 'non-member' THEN NULL " +    
             "    WHEN ( " +
             "        SELECT COALESCE(SUM(total_harga), 0) " +
             "        FROM penjualan " +
@@ -202,8 +205,7 @@ public class PelangganDAO implements ServicePelanggan{
             "        WHERE penjualan.id_pelanggan = pelanggan.id_pelanggan " +
             "    ) >= 100000 THEN 'Silver' " +
             "    ELSE 'Bronze' " +
-            "END " +
-            "WHERE nama_pelanggan <> 'non-member'"; 
+            "END ";
         try {
             st = conn.prepareStatement(sql);
             st.executeUpdate();
