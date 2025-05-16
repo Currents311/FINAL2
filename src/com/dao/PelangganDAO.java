@@ -72,7 +72,7 @@ public class PelangganDAO implements ServicePelanggan{
         String sql = 
             "SELECT p.*, " +
             "       CASE " +
-            "           WHEN p.nama_pelanggan = 'non-member' THEN NULL " +            
+            "           WHEN p.nama_pelanggan = 'non member' THEN NULL " +            
             "           WHEN COALESCE(SUM(pj.total_harga), 0) > 500000 THEN 'Gold' " +
             "           WHEN COALESCE(SUM(pj.total_harga), 0) >= 100000 THEN 'Silver' " +
             "           ELSE 'Bronze' " +
@@ -193,7 +193,7 @@ public class PelangganDAO implements ServicePelanggan{
         String sql = 
             "UPDATE pelanggan SET level_member = " +
             "CASE " +
-            "    WHEN nama_pelanggan = 'non-member' THEN NULL " +    
+            "    WHEN nama_pelanggan = 'non member' THEN NULL " +    
             "    WHEN ( " +
             "        SELECT COALESCE(SUM(total_harga), 0) " +
             "        FROM penjualan " +

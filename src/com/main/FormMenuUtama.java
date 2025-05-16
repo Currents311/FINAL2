@@ -2,7 +2,6 @@ package com.main;
 
 import com.dao.KaryawanDAO;
 import com.form.FormLogin;
-import com.form.FormWelcome;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.extras.FlatAnimatedLafChange;
@@ -13,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 public class FormMenuUtama extends javax.swing.JFrame {
-    private final FormWelcome formWelcome;
     private final FormLogin formLogin;
     private static FormMenuUtama app;
     private Main mainForm;
@@ -23,10 +21,9 @@ public class FormMenuUtama extends javax.swing.JFrame {
     public FormMenuUtama(String role) {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        formWelcome = new FormWelcome();
         formLogin = new FormLogin();
         Session.setRole(role);
-        setContentPane(formWelcome);
+        setContentPane(formLogin);
     }
 
     @SuppressWarnings("unchecked")
